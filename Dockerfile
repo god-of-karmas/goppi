@@ -64,15 +64,6 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/Bot
-RUN git clone -b shiken https://github.com/god-of-karmas/goppi /root/Bot
-WORKDIR /root/Bot
-
-#Copy config file to /root/Bot/Bot
-COPY ./Bot/sample_config.py ./Bot/config.py* /root/Bot/Bot
-
-ENV PATH="/home/bot/bin:$PATH"
-
 # Install requirements
 RUN pip3 install -U -r requirements.txt
 
