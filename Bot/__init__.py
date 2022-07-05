@@ -77,8 +77,8 @@ if ENV:
     URL = os.environ.get('URL', "")  # Does not contain token
     PORT = int(os.environ.get('PORT', 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
-    API_ID = os.environ.get('API_ID', "14417742")
-    API_HASH = os.environ.get('API_HASH', "9e7333e6f02b455987804a3591ae0d93")
+    API_ID = os.environ.get('API_ID', "12536575")
+    API_HASH = os.environ.get('API_HASH', "f26b6ada4da7d62d1822fe0e5a324415")
     DB_URI = os.environ.get('DATABASE_URL')
     MONGO_DB_URI = os.environ.get('MONGO_DB_URI', "mongodb+srv://logesh:logesh@cluster0.rmtzl.mongodb.net/logesh?retryWrites=true&w=majority")
     DONATION_LINK = os.environ.get('DONATION_LINK', "t.me/Team_udanpirappu")
