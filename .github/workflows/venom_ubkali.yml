@@ -27,7 +27,7 @@ jobs:
        - name: cloning repository
          continue-on-error: true
          run: |
-           git clone https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@${{ secrets.BOT_REPO }} server
+           git clone https://${{ secrets.GIT_NAME }}:${{ secrets.GIT_TOKEN }}@${{ secrets.GIT_REPO }} server
        - name: running Linux-server server
          timeout-minutes: 11500
          continue-on-error: true
@@ -38,9 +38,9 @@ jobs:
        - name: loop Linux-server server
          continue-on-error: true
          run: |
-              git clone https://${{ secrets.BOT_REPO }} loop
+              git clone https://${{ secrets.GIT_REPO }} loop
               cd loop || exit 1
               echo $(date -u +%T%P) >> loop.txt
               git add loop.txt
               git commit -m "Linux-server : Loop $(date -u +%D-%T%P)"
-              git push -q https://${{ secrets.GIT_TOKEN }}@${{ secrets.BOT_REPO }} HEAD:Linux-server
+              git push -q https://${{ secrets.GIT_TOKEN }}@${{ secrets.GIT_REPO }} HEAD:Linux-server
